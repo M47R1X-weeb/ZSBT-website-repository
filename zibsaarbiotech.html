@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZibSaar Biotech - Decoding Genes, Advancing Research</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter Font --><style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #000000; /* Deep Charcoal Black */
+            background: url('background.jpg') center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        /* Custom Background Gradient and DNA Helix Simulation based on the provided image */
+        .dna-bg {
+            /* Simulating the lime green gradient */
+            background: linear-gradient(to right, #eaf8c7, #c1ec80, #98d85f);
+            position: relative;
+            overflow: hidden;
+        }
+        .dna-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20%;
+            height: 100%;
+            /* Darker green DNA helix pattern - using a placeholder background style */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cpath id='helix' d='M 10 0 C 10 50 40 50 40 100' fill='none' stroke='%235AA847' stroke-width='3' /%3E%3C/defs%3E%3Cuse href='%23helix' x='0' y='0' /%3E%3Cuse href='%23helix' x='50' y='-50' transform='rotate(180 50 50)' /%3E%3C/svg%3E");
+            background-repeat: repeat-y;
+            background-size: 100% 50%;
+            opacity: 0.5; /* Adjusted opacity to make it a subtle background texture */
+            z-index: 0;
+        }
+        /* Custom Colors */
+        .text-Charcoal { color: #000000; }
+        .bg-accent-green { background-color: #5AA847; } /* Darker Accent Green */
+        .hover\:bg-accent-dark { background-color: #4A8C3C; }
+        .border-accent-green { border-color: #5AA847; }
+        /* Style for the sticky header to give it depth */
+        .sticky-header {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 50;
+        }
+        /* Custom scrollbar for visual appeal */
+        .carousel-container {
+            overflow-x: scroll;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+    </style>
+</head>
+
+<body class="antialiased text-charcoal">
+
+    <!-- Sticky Header/Navigation --><header id="header" class="sticky top-0 sticky-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo --><a href="#home" class="flex items-center space-x-2 group">
+                <!-- NEW LOGO IMAGE (Replaced SVG with user-provided image) -->
+                <img src="_We Are Hiring.png" 
+                     alt="ZibSaar Biotech stylized logo featuring an elegant green DNA double helix intertwined with the text We Are Hiring" 
+                     class="h-8 w-auto transition duration-300 transform group-hover:scale-105">
+                <span class="text-xl font-bold tracking-tight text-charcoal">ZibSaar Biotech</span>
+            </a>
+
+            <!-- Navigation Links --><nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-charcoal hover:text-accent-green font-medium transition duration-300">Home</a>
+                <a href="#About Us" class="text-charcoal hover:text-accent-green font-medium transition duration-300">About Us</a>
+                <a href="#services" class="text-charcoal hover:text-accent-green font-medium transition duration-300">Our Services</a>
+                <a href="#careers" class="text-charcoal hover:text-accent-green font-medium transition duration-300">Careers</a>
+                <a href="#contact" class="text-charcoal hover:text-accent-green font-medium transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button --><button id="mobile-menu-button" class="md:hidden text-charcoal hover:text-accent-green focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden px-4 pb-3 space-y-2 border-t border-gray-100">
+            <a href="#home" class="block text-charcoal hover:text-accent-green py-2 rounded-lg font-medium">Home</a>
+            <a href="#About Us" class="block text-charcoal hover:text-accent-green py-2 rounded-lg font-medium">About Us</a>
+            <a href="#services" class="block text-charcoal hover:text-accent-green py-2 rounded-lg font-medium">Our Services</a>
+            <a href="#careers" class="block text-charcoal hover:text-accent-green py-2 rounded-lg font-medium">Careers</a>
+            <a href="#contact" class="block text-charcoal hover:text-accent-green py-2 rounded-lg font-medium">Contact</a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        
+        <!-- Hero Section (Decoding Genes, Advancing Research) --><section id="home" class="dna-bg relative py-20 md:py-32 overflow-hidden rounded-b-3xl shadow-xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+                <div class="flex flex-col md:flex-row items-center">
+                    
+                    <!-- Text Content (Left) --><div class="md:w-1/2 mb-10 md:mb-0">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-charcoal">
+                            ZibSaar
+                            <span class="text-accent-green">Biotech</span>
+                        </h1>
+                        <p class="text-lg md:text-xl mb-8 text-charcoal/80 max-w-lg">
+                           Decoding Genes, Advancing Research.
+                        </p>
+                        <a href="#services" class="inline-block px-8 py-3 bg-accent-green text-white font-semibold rounded-full shadow-lg transition duration-300 hover:bg-accent-dark hover:scale-[1.03]">
+                            Explore Our Services
+                        </a>
+                    </div>
+
+                    <!-- Image Content (Right - Life Science Lab) --><div class="md:w-1/2 flex justify-center md:justify-end">
+                        <img 
+                            src="Blue and White Modern Innovative Lab Solutions Instagram Post .jpg" 
+                            alt="Researchers working in a modern life science lab" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x400/1F1F1F/c1ec80?text=Modern+Life+Science+Lab+Image+Placeholder'"
+                            class="rounded-2xl shadow-2xl w-full max-w-md object-cover transform hover:scale-[1.02] transition duration-500"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section (Slider/Carousel) --><section id="team" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-charcoal">Our Leadership & Team</h2>
+                
+                <!-- Carousel Container --><div id="team-carousel" class="carousel-container flex space-x-6 pb-6 snap-x snap-mandatory">
+                    
+                    <!-- Team Member 1: Narayan Prasad Baruah (Founder & CEO) --><div class="flex-shrink-0 w-80 md:w-96 snap-center bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <img 
+                            src="https://placehold.co/100x100/5AA847/FFFFFF?text=CEO" 
+                            alt="CEO Profile" 
+                            class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-accent-green"
+                        >
+                        <h3 class="text-xl font-semibold text-center text-charcoal">Narayan Prasad Baruah</h3>
+                        <p class="text-center text-accent-green mb-3">Founder & CEO</p>
+                        <p class="text-sm text-gray-600 text-center">The visionary Founder and leader setting the strategic direction for ZibSaar Biotech.</p>
+                    </div>
+
+                    <!-- Team Member 2: Barnav Das (Co-founder & GM) --><div class="flex-shrink-0 w-80 md:w-96 snap-center bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <img 
+                            src="https://placehold.co/100x100/5AA847/FFFFFF?text=GM" 
+                            alt="GM Profile" 
+                            class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-accent-green"
+                        >
+                        <h3 class="text-xl font-semibold text-center text-charcoal">Barnav Das</h3>
+                        <p class="text-center text-accent-green mb-3">Co-founder & General Manager</p>
+                        <p class="text-sm text-gray-600 text-center">Co-founder responsible for overseeing administrative and operational efficiency.</p>
+                    </div>
+                    
+                    <!-- Team Member 3: Ridip Dutta (CSO) --><div class="flex-shrink-0 w-80 md:w-96 snap-center bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <img 
+                            src="https://placehold.co/100x100/5AA847/FFFFFF?text=CSO" 
+                            alt="CSO Profile" 
+                            class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-accent-green"
+                        >
+                        <h3 class="text-xl font-semibold text-center text-charcoal">Ridip Dutta</h3>
+                        <p class="text-center text-accent-green mb-3">Chief Scientific Officer</p>
+                        <p class="text-sm text-gray-600 text-center">Leads all scientific research, development, and genomic innovation programs.</p>
+                    </div>
+                    
+                    <!-- Team Member 4: Partha (Compliance & Clinical Trials Supervisor) --><div class="flex-shrink-0 w-80 md:w-96 snap-center bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <img 
+                            src="https://placehold.co/100x100/5AA847/FFFFFF?text=CS" 
+                            alt="Supervisor Profile" 
+                            class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-accent-green"
+                        >
+                        <h3 class="text-xl font-semibold text-center text-charcoal">Partha Pratim Borah</h3>
+                        <p class="text-center text-accent-green mb-3">Compliance & Clinical Trials Supervisor</p>
+                        <p class="text-sm text-gray-600 text-center">Ensures regulatory compliance and manages the coordination of clinical trials.</p>
+                    </div>
+                    
+                    <!-- Team Member 5: Rubul Ali (Laboratory Manager) --><div class="flex-shrink-0 w-80 md:w-96 snap-center bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+                        <img 
+                            src="https://placehold.co/100x100/5AA847/FFFFFF?text=LM" 
+                            alt="Lab Manager Profile" 
+                            class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-accent-green"
+                        >
+                        <h3 class="text-xl font-semibold text-center text-charcoal">Rubul Ali</h3>
+                        <p class="text-center text-accent-green mb-3">Laboratory Manager</p>
+                        <p class="text-sm text-gray-600 text-center">Manages all laboratory logistics, equipment, and resource planning.</p>
+                    </div>
+                </div>
+
+                <!-- Simple Carousel Controls --><div class="flex justify-center space-x-4 mt-8">
+                    <button id="prev-slide" class="p-3 rounded-full bg-accent-green text-white hover:bg-accent-dark transition duration-300 shadow-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="next-slide" class="p-3 rounded-full bg-accent-green text-white hover:bg-accent-dark transition duration-300 shadow-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Our Services Section (Grid) --><section id="services" class="py-16 md:py-24 dna-bg rounded-t-3xl shadow-inner">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-4 text-charcoal">Cutting-Edge Scientific Services</h2>
+                <p class="text-lg text-center text-charcoal/70 mb-12 max-w-3xl mx-auto">
+                    We offer a comprehensive suite of analytical and genomic services to power your research and development.
+                </p>
+
+                <!-- Services Grid --><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                    <!-- Service Card Template --><div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5a2 2 0 012 2v6a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2zM4 16v4a2 2 0 002 2h12a2 2 0 002-2v-4"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Sanger Sequencing</h3>
+                        <p class="text-sm text-gray-600 mt-1">High-quality, reliable sequencing for single genes and PCR products.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2c-1.657 0-3-.895-3-2s1.343-2 3-2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12c0 1.657-4.5 3-9 3s-9-1.343-9-3"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12c0-1.657-4.5-3-9-3s-9 1.343-9 3"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Species Identification</h3>
+                        <p class="text-sm text-gray-600 mt-1">Accurate identification and classification of unknown biological samples.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M12 21.3V12.7M16 16v5.3M20 19v2.3"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Gene expression Studies</h3>
+                        <p class="text-sm text-gray-600 mt-1">Quantify RNA and protein levels to understand cellular activity and pathways.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Next Gen Sequencing</h3>
+                        <p class="text-sm text-gray-600 mt-1">High-throughput sequencing for complex genomic and transcriptomic analysis.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13h10M7 17h10M7 5h10M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Real Time PCR</h3>
+                        <p class="text-sm text-gray-600 mt-1">Precise quantification and analysis of nucleic acids.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-9 0V3h5m0 2h5m-5 5h5m-5 4h5m-5 4h5"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Biochemical Analysis</h3>
+                        <p class="text-sm text-gray-600 mt-1">In-depth study of biological molecules and metabolic processes.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Bioinformatical Analysis</h3>
+                        <p class="text-sm text-gray-600 mt-1">Advanced computational analysis of complex biological data sets.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-accent-green hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <svg class="w-8 h-8 text-accent-green mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="text-lg font-semibold text-charcoal">Metabolomics</h3>
+                        <p class="text-sm text-gray-600 mt-1">Large-scale study of small molecules within cells, tissues, or organisms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research and Careers/Contact Sections (Placeholders) --><section id="About Us" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-6 text-charcoal">About Zibsaar Biotech</h2>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-inner border border-gray-100">
+                    <p class="text-lg text-charcoal/70 text-center">
+                        Zibsaar Biotech aims at contributing excellent and superior genome sequencing and bioinformatics services to the 
+                        research community in India and around the world. 
+                        Using the latest equipment from industry-leading providers, we help scientists 
+                        accelerate their genomics discoveries.
+
+We at Zibsaar Biotech are committed to providing on-time, 
+high-quality, accurate results that help our customers make c
+ompetent decisions and meet their quality standards.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="careers" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-6 text-charcoal">Join the ZibSaar Team</h2>
+                <div class="text-center">
+                    <p class="text-lg text-charcoal/70 mb-8">
+                        Explore opportunities to be part of a team that is decoding the molecules of life.
+                    </p>
+                    <a href="#contact" class="inline-block px-8 py-3 text-accent-green border-2 border-accent-green font-semibold rounded-full transition duration-300 hover:bg-accent-green hover:text-white">
+                        Enquiry
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 bg-gray-50 rounded-t-3xl border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-charcoal">Get In Touch</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    
+                    <!-- Contact Form (Placeholder) --><div class="bg-white p-8 rounded-xl shadow-xl">
+                        <h3 class="text-xl font-semibold mb-4 text-charcoal">Send Us a Message</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent-green focus:border-accent-green">
+                            <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent-green focus:border-accent-green">
+                            <textarea rows="4" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent-green focus:border-accent-green"></textarea>
+                            <button type="submit" class="w-full px-4 py-3 bg-accent-green text-white font-semibold rounded-lg hover:bg-accent-dark transition duration-300">
+                                Submit Enquiry
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details --><div class="space-y-6 p-8 bg-white rounded-xl shadow-xl">
+                        <h3 class="text-xl font-semibold mb-6 text-charcoal">Contact Details</h3>
+
+                        <!-- Address --><div class="flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-accent-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div>
+                                <p class="font-medium text-charcoal">Our Address</p>
+                                <p class="text-gray-600">Hno6 D Neogpath, Anandanagar, Guwahati, 781005</p>
+                            </div>
+                        </div>
+
+                        <!-- Email --><div class="flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-accent-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-17 4v7a2 2 0 002 2h14a2 2 0 002-2v-7"></path></svg>
+                            <div>
+                                <p class="font-medium text-charcoal">Email Us</p>
+                                <a href="mailto:sales@zibsaar.in" class="text-accent-green hover:underline">sales@zibsaar.in</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone --><div class="flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-accent-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"src="call-receive.svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.5l1.5 4.5 3-3 4.5 1.5 4.5 1.5V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                            <div>
+                                <p class="font-medium text-charcoal">Call Us</p>
+                                <a href="tel:+919954383321" class="text-accent-green hover:underline">+91 9954383321</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer --><footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <!-- Logo & Mission --><div class="col-span-2 md:col-span-1">
+                    <h3 class="text-xl font-bold mb-3 text-accent-green">ZibSaar Biotech</h3>
+                    <p class="text-sm text-gray-400">ZibSaar Botech
+                </div>
+                
+                <!-- Quick Links --><div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#About Us" class="hover:text-accent-green transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="hover:text-accent-green transition duration-300">Our Services</a></li>
+                        <li><a href="#careers" class="hover:text-accent-green transition duration-300">Careers</a></li>
+                        <li><a href="#contact" class="hover:text-accent-green transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info (Primary) --><div>
+                    <h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>
+                            <p>Email: <a href="mailto:sales@zibsaar.in" class="hover:text-accent-green">sales@zibsaar.in</a></p>
+                        </li>
+                        <li>
+                            <p>Phone: <a href="tel:+919954383321" class="hover:text-accent-green">+91 9954383321, +91 6901135939</a></p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Address --><div>
+                    <h4 class="text-lg font-semibold mb-4">Location</h4>
+                    <p class="text-sm text-gray-400">Hno6 D Neogpath, Anandanagar, Guwahati, 781005</p>
+                </div>
+            </div>
+            
+            <!-- Bottom Copyright and Socials --><div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2025 ZibSaar Biotech. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-accent-green transition duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-accent-green transition duration-300">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Team Slider --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click (for smooth scrolling)
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+
+            // --- Team Carousel/Slider Functionality ---
+            const carousel = document.getElementById('team-carousel');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+
+            if (carousel && prevButton && nextButton) {
+                const scrollStep = 350; // Distance to scroll
+
+                nextButton.addEventListener('click', () => {
+                    carousel.scrollBy({
+                        left: scrollStep,
+                        behavior: 'smooth'
+                    });
+                });
+
+                prevButton.addEventListener('click', () => {
+                    carousel.scrollBy({
+                        left: -scrollStep,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
